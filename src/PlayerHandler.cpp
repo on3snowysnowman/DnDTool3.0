@@ -3,6 +3,7 @@
 #include <Debug.h>
 
 #include "PlayerHandler.h"
+#include "Item.h"
 #include "JsonLoader.h"
 
 
@@ -22,6 +23,7 @@ void PlayerHandler::save_player(Player* p)
 {
     Json player_save;
 
+    // Save player attributes
     player_save["Name"] = p->name;
     player_save["Hitpoints"] = p->hitpoints;
     player_save["Max Hitpoints"] = p->max_hitpoints;
@@ -29,6 +31,35 @@ void PlayerHandler::save_player(Player* p)
     player_save["Evasion"] = p->evasion;
     player_save["Mana"] = p->mana;
     player_save["Max Mana"] = p->max_mana;
+
+    Json p_items = Json::array(); // Json List of items to be saved
+    Json item_instance; // Json Obj for each individual item
+    Json item_attributes; // Json List of attributes for each item
+
+    for(Item* i : p->items)
+    {
+        item_instance.clear();
+        item_attributes.clear();
+
+        // Emplace the item name
+        item_instance["Name"] = i->name;
+
+        // Iterate through the attributes of this item
+        for(std::string attrib : i->attributes)
+        {
+            // Emplace this attribute
+            item_attributes.push_back(attrib);
+        }
+
+        // Emplace the item attributes
+        item_instance["Attributes"] = item_attributes;
+
+        // Add this item to the list of items to be saved
+        p_items.push_back(item_instance);
+    }
+
+    // Save player items
+    player_save["Items"] = p_items;
 
     // Save player to a new file
     if(active_player_name.size() == 0)
@@ -57,12 +88,33 @@ Player* PlayerHandler::load_player(std::string save_path)
 
     Debug::log("Loading player: " + new_p->name);
 
+    // Load normal attributes
     new_p->hitpoints = player_save.at("Hitpoints");
     new_p->max_hitpoints = player_save.at("Max Hitpoints");
     new_p->defense = player_save.at("Defense");
     new_p->evasion = player_save.at("Evasion");
     new_p->mana = player_save.at("Mana");
     new_p->max_mana = player_save.at("Max Mana");
+
+    Json::iterator start_it = player_save.at("Items").begin();
+    Json::iterator end_it = player_save.at("Items").end();
+
+    // Load items
+    while(start_it != end_it)
+    {
+        Item* i = new Item;
+
+        i->name = start_it->at("Name");
+
+        for(std::string attrib : start_it->at("Attributes"))
+        {
+            i->attributes.push_back(attrib);
+        }
+
+        new_p->items.push_back(i);
+
+        ++start_it;
+    }
 
     return new_p;
 }

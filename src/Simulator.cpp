@@ -20,7 +20,7 @@ Simulator::Simulator() : LSDLE("C:/Users/on3sn/LSDLE")
 
     player = p_handler->load_player(
         "C:/Users/on3sn/Documents/DnDTool3.0/Player_Saves/Logoosal.json");
-
+        
     main_sim_menu = new MainSimMenu(0, 0, screen_width, 
         screen_height, player);
 
@@ -31,9 +31,9 @@ Simulator::Simulator() : LSDLE("C:/Users/on3sn/LSDLE")
 
     settings_menu = new SettingsMenu(0, 0, screen_width, screen_height);
 
-    main_sim_menu->init_menu();
-    hit_mod_menu->init_menu();
-    stat_menu->init_menu();
+    v_inv_menu = new ViewInventoryMenu(0, 0, screen_width, screen_height);
+
+    initialize_menus();
 
     MenuHandler::activate_menu(main_sim_menu);
 }; 
@@ -56,6 +56,14 @@ void Simulator::update()
 }
 
 void Simulator::render() {}
+
+void Simulator::initialize_menus()
+{
+    main_sim_menu->init_menu();
+    hit_mod_menu->init_menu();
+    stat_menu->init_menu();
+    v_inv_menu->init_menu();
+}
 
 void Simulator::process_keys()
 {

@@ -19,7 +19,7 @@ struct Player
 
     std::string name;
 
-    std::vector<Item> items;
+    std::vector<Item*> items;
     std::vector<std::string> buffs;
     std::vector<std::string> debuffs;
 };

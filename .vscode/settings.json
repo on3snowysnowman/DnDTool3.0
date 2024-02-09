@@ -54,6 +54,13 @@
         "ctime": "cpp",
         "ratio": "cpp",
         "fstream": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "any": "cpp",
+        "forward_list": "cpp",
+        "set": "cpp",
+        "optional": "cpp",
+        "ranges": "cpp",
+        "span": "cpp",
+        "valarray": "cpp"
     }
 }

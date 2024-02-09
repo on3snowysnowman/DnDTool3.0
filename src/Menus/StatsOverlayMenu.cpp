@@ -80,16 +80,16 @@ void StatsOverlayMenu::update()
 
 void StatsOverlayMenu::render_stats()
 {
-    window->add_str("Name: ", "DarkGray");
+    window->add_str("Name: ", "LightGray");
     window->add_str(player->name + "\n");
-    window->add_str("Hitpoints: ", "DarkGray");
+    window->add_str("Hitpoints: ", "LightGray");
     window->add_str(std::to_string(player->hitpoints) + " / " + 
         std::to_string(player->max_hitpoints) + '\n');
-    window->add_str("Mana: ", "DarkGray");
+    window->add_str("Mana: ", "LightGray");
     window->add_str(std::to_string(player->mana) + " / " + 
         std::to_string(player->max_mana) + '\n');
-    window->add_str("Defense: ", "DarkGray");
+    window->add_str("Defense: ", "LightGray");
     window->add_str(std::to_string(player->defense) + '\n');
-    window->add_str("Evasion: ", "DarkGray");
+    window->add_str("Evasion: ", "LightGray");
     window->add_str(std::to_string(player->evasion) + '\n');
 }

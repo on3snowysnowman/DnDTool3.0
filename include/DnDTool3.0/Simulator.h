@@ -10,6 +10,7 @@
 #include "StatsOverlayMenu.h"
 #include "SettingsMenu.h"
 #include "PlayerHandler.h"
+#include "ViewInventoryMenu.h"
 
 
 class Simulator : public LSDLE
@@ -25,6 +26,8 @@ private:
 
     void update() final;
     void render() final;
+
+    void initialize_menus();
 
     void process_keys();
 
@@ -45,4 +48,5 @@ private:
     HitpointManaModificationMenu* hit_mod_menu;
     StatsOverlayMenu* stat_menu;
     SettingsMenu* settings_menu;
+    ViewInventoryMenu* v_inv_menu;
 };

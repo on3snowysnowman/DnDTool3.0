@@ -29,7 +29,6 @@ public:
 private:
 
     void render_quick_stats();
-    void render_mana_meter();
 
     std::string* cursor_color;
 

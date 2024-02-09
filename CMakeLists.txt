@@ -17,6 +17,7 @@ add_library(DnDTool3.0
     src/Menus/MainSimMenu.cpp
     src/Menus/SettingsMenu.cpp
     src/Menus/StatsOverlayMenu.cpp
+    src/Menus/ViewInventoryMenu.cpp
 )
 
 

@@ -1,9 +1,9 @@
-#include <iostream>
 
-#include <MenuHandler.h>
-#include <LMath.h>
-#include <ColorString.h>
-#include <EventSystem.h>
+
+#include "MenuHandler.h"
+#include "LMath.h"
+#include "ColorString.h"
+#include "EventSystem.h"
 
 #include "HitpointManaModificationMenu.h"
 #include "MenuHandler.h"
@@ -77,10 +77,10 @@ void HitpointManaModificationMenu::update()
 {
     window->add_str("[ Main Menu / Modify Hitpoints & Mana ]\n\n");
 
-    window->add_str("Hitpoints: ", "DarkGray");
+    window->add_str("Hitpoints: ", "LightGray");
     menu_tools->render_multi_colored_meter(player->hitpoints, 0, 
         player->max_hitpoints);
-    window->add_str("\nMana: ", "DarkGray");
+    window->add_str("\nMana: ", "LightGray");
     menu_tools->render_single_color_meter(player->mana, 0, 
         player->max_mana, "Blue");
 
@@ -118,29 +118,34 @@ void HitpointManaModificationMenu::update()
 
 // Private
 
+#include <iostream>
+
 void HitpointManaModificationMenu::handle_increment()
 {
+    uint16_t increment_amount = delta_amount->fetch_int();
+
     // Check if mana or hitpoints has been selected for modification
     switch(modification_choice->choice_index)
     {
-
         // Hitpoints
         case 0:
 
-            player->hitpoints += std::stoi(delta_amount->content);
+            player->hitpoints = LMath::handle_uint16_addition(
+                player->hitpoints, increment_amount);
 
             // Round the hitpoints to the max hitpoints if it exceeds it
-            player->hitpoints = round_num_to_maximum(player->hitpoints,
+            player->hitpoints = LMath::round_num_to_maximum(player->hitpoints,
                 player->max_hitpoints);
             return;
 
         // Mana
         case 1:
 
-            player->mana += std::stoi(delta_amount->content);
+            player->mana = LMath::handle_uint16_addition(
+                player->mana, increment_amount);
 
             // Round the hitpoints to the max hitpoints if it exceeds it
-            player->mana = round_num_to_maximum(player->mana,
+            player->mana = LMath::round_num_to_maximum(player->mana,
                 player->max_mana);
             return;
     }
@@ -148,7 +153,7 @@ void HitpointManaModificationMenu::handle_increment()
 
 void HitpointManaModificationMenu::handle_decrement()
 {
-    uint16_t increment_amount;
+    uint16_t increment_amount = delta_amount->fetch_int();
 
     // Check if mana or hitpoints has been selected for modification
     switch(modification_choice->choice_index)
@@ -157,23 +162,18 @@ void HitpointManaModificationMenu::handle_decrement()
         // Hitpoints
         case 0:
 
-            increment_amount = 
-                std::stoi(delta_amount->content);
-
             if(player->hitpoints - increment_amount < 0) 
             {
                 player->hitpoints = 0;
                 return;
             }
+            
 
             player->hitpoints -= increment_amount;
             return;
 
         // Mana
         case 1:
-
-            increment_amount = 
-                std::stoi(delta_amount->content);
 
             if(player->mana - increment_amount < 0) 
             {

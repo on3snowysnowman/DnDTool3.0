@@ -71,8 +71,8 @@ void MainSimMenu::update()
     else if(selected_item == "View Stats Overlay")
         MenuHandler::activate_menu("StatsOverlay");
 
-    // else if(selected_item == "Inventory")
-    //     m_handler->activate_menu("ViewInventory");
+    else if(selected_item == "Inventory")
+        MenuHandler::activate_menu("ViewInventory");
 
     else if(selected_item == "Settings")
         MenuHandler::activate_menu("Settings");
@@ -87,52 +87,16 @@ Player* MainSimMenu::get_player() const { return player; }
 
 void MainSimMenu::render_quick_stats()
 {
-    window->add_str(player->name, "DarkGray");
-    window->add_new_line(2);
-    window->add_str("Hitpoints: ", "DarkGray");
+    window->add_str(player->name, "LightGray");
+    window->add_str("\n\nHitpoints: ", "LightGray");
     menu_tools->render_multi_colored_meter(player->hitpoints, 0, 
         player->max_hitpoints);
-    render_mana_meter();
-    window->add_str("\nDefense: ", "DarkGray");
+    window->add_str("\nMana: ", "LightGray");
+    menu_tools->render_single_color_meter(player->mana, 0, player->max_mana,
+        "Blue");
+    window->add_str("\nDefense: ", "LightGray");
     menu_tools->render_colored_number(player->defense, 5, 15);
-    window->add_str("\nEvasion: ", "DarkGray");
+    window->add_str("\nEvasion: ", "LightGray");
     menu_tools->render_colored_number(player->evasion, 5, 15);
     window->add_new_line(2);
-}
-
-void MainSimMenu::render_mana_meter()
-{
-    window->add_str("\nMana: ", "DarkGray");
-    window->add_str(std::to_string(player->mana) + " [");
-
-    uint8_t num_ticks;
-
-    if(player->mana == player->max_mana) num_ticks = 10;
-
-    else if(player->mana == 0) num_ticks = 0;
-
-    else
-    {
-        float ratio = float(player->mana / (player->max_mana * 1.0));
-
-        num_ticks = 10 * ratio;
-
-        if(num_ticks == 0) ++num_ticks;
-    }
-
-    uint8_t i = 0;
-
-    while(i < num_ticks)
-    {
-        window->add_ch('/', "Blue");
-        ++i;
-    }
-
-    while(i < 10)
-    {
-        window->add_ch('/');
-        ++i;
-    }
-
-    window->add_str("] " + std::to_string(player->max_mana));
 }

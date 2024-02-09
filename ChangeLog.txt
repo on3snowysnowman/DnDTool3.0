@@ -4,6 +4,8 @@
 
  - Added a PlayerHandler for saving and loading players to disk
 
+ - Added a ViewInventoryMenu
+
 # Version 0.1
 
  CHANGES:
