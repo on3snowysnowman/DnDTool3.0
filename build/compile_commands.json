@@ -1,0 +1,32 @@
+[
+{
+  "directory": "C:/Users/on3sn/Desktop/Programming/DnDTool3.0/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0 -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0/Menus -IC:/Users/on3sn/LSDLE/include/LSDLE -IC:/Users/on3sn/LSDLE/include/LSDLE/MenuTools -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/src -isystem C:/msys64/mingw64/include/SDL2 -g -o CMakeFiles\\DnDTool3.0.dir\\src\\Simulator.cpp.obj -c C:\\Users\\on3sn\\Desktop\\Programming\\DnDTool3.0\\src\\Simulator.cpp",
+  "file": "C:\\Users\\on3sn\\Desktop\\Programming\\DnDTool3.0\\src\\Simulator.cpp"
+},
+{
+  "directory": "C:/Users/on3sn/Desktop/Programming/DnDTool3.0/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0 -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0/Menus -IC:/Users/on3sn/LSDLE/include/LSDLE -IC:/Users/on3sn/LSDLE/include/LSDLE/MenuTools -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/src -isystem C:/msys64/mingw64/include/SDL2 -g -o CMakeFiles\\DnDTool3.0.dir\\src\\Menus\\HitpointManaModificationMenu.cpp.obj -c C:\\Users\\on3sn\\Desktop\\Programming\\DnDTool3.0\\src\\Menus\\HitpointManaModificationMenu.cpp",
+  "file": "C:\\Users\\on3sn\\Desktop\\Programming\\DnDTool3.0\\src\\Menus\\HitpointManaModificationMenu.cpp"
+},
+{
+  "directory": "C:/Users/on3sn/Desktop/Programming/DnDTool3.0/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0 -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0/Menus -IC:/Users/on3sn/LSDLE/include/LSDLE -IC:/Users/on3sn/LSDLE/include/LSDLE/MenuTools -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/src -isystem C:/msys64/mingw64/include/SDL2 -g -o CMakeFiles\\DnDTool3.0.dir\\src\\Menus\\MainSimMenu.cpp.obj -c C:\\Users\\on3sn\\Desktop\\Programming\\DnDTool3.0\\src\\Menus\\MainSimMenu.cpp",
+  "file": "C:\\Users\\on3sn\\Desktop\\Programming\\DnDTool3.0\\src\\Menus\\MainSimMenu.cpp"
+},
+{
+  "directory": "C:/Users/on3sn/Desktop/Programming/DnDTool3.0/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0 -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0/Menus -IC:/Users/on3sn/LSDLE/include/LSDLE -IC:/Users/on3sn/LSDLE/include/LSDLE/MenuTools -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/src -isystem C:/msys64/mingw64/include/SDL2 -g -o CMakeFiles\\DnDTool3.0.dir\\src\\Menus\\SettingsMenu.cpp.obj -c C:\\Users\\on3sn\\Desktop\\Programming\\DnDTool3.0\\src\\Menus\\SettingsMenu.cpp",
+  "file": "C:\\Users\\on3sn\\Desktop\\Programming\\DnDTool3.0\\src\\Menus\\SettingsMenu.cpp"
+},
+{
+  "directory": "C:/Users/on3sn/Desktop/Programming/DnDTool3.0/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0 -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0/Menus -IC:/Users/on3sn/LSDLE/include/LSDLE -IC:/Users/on3sn/LSDLE/include/LSDLE/MenuTools -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/src -isystem C:/msys64/mingw64/include/SDL2 -g -o CMakeFiles\\DnDTool3.0.dir\\src\\Menus\\StatsOverlayMenu.cpp.obj -c C:\\Users\\on3sn\\Desktop\\Programming\\DnDTool3.0\\src\\Menus\\StatsOverlayMenu.cpp",
+  "file": "C:\\Users\\on3sn\\Desktop\\Programming\\DnDTool3.0\\src\\Menus\\StatsOverlayMenu.cpp"
+},
+{
+  "directory": "C:/Users/on3sn/Desktop/Programming/DnDTool3.0/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0 -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0/Menus -IC:/Users/on3sn/LSDLE/include/LSDLE -IC:/Users/on3sn/LSDLE/include/LSDLE/MenuTools -isystem C:/msys64/mingw64/include/SDL2 -g -o CMakeFiles\\Main.dir\\main.cpp.obj -c C:\\Users\\on3sn\\Desktop\\Programming\\DnDTool3.0\\main.cpp",
+  "file": "C:\\Users\\on3sn\\Desktop\\Programming\\DnDTool3.0\\main.cpp"
+}
+]

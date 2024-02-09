@@ -1,0 +1,4 @@
+C:/Users/on3sn/Desktop/Programming/DnDTool3.0/build/CMakeFiles/DnDTool3.0.dir
+C:/Users/on3sn/Desktop/Programming/DnDTool3.0/build/CMakeFiles/Main.dir
+C:/Users/on3sn/Desktop/Programming/DnDTool3.0/build/CMakeFiles/edit_cache.dir
+C:/Users/on3sn/Desktop/Programming/DnDTool3.0/build/CMakeFiles/rebuild_cache.dir
