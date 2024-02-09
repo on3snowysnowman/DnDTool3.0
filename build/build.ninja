@@ -49,6 +49,13 @@ cmake_ninja_workdir = C$:/Users/on3sn/Desktop/Programming/DnDTool3.0/build/
 
 build cmake_object_order_depends_target_DnDTool3.0: phony || CMakeFiles/DnDTool3.0.dir
 
+build CMakeFiles/DnDTool3.0.dir/src/PlayerHandler.cpp.obj: CXX_COMPILER__DnDTool3.2e0_Debug C$:/Users/on3sn/Desktop/Programming/DnDTool3.0/src/PlayerHandler.cpp || cmake_object_order_depends_target_DnDTool3.0
+  DEP_FILE = CMakeFiles\DnDTool3.0.dir\src\PlayerHandler.cpp.obj.d
+  FLAGS = -g
+  INCLUDES = -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0 -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0/Menus -IC:/Users/on3sn/LSDLE/include/LSDLE -IC:/Users/on3sn/LSDLE/include/LSDLE/MenuTools -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/src -isystem C:/msys64/mingw64/include/SDL2
+  OBJECT_DIR = CMakeFiles\DnDTool3.0.dir
+  OBJECT_FILE_DIR = CMakeFiles\DnDTool3.0.dir\src
+
 build CMakeFiles/DnDTool3.0.dir/src/Simulator.cpp.obj: CXX_COMPILER__DnDTool3.2e0_Debug C$:/Users/on3sn/Desktop/Programming/DnDTool3.0/src/Simulator.cpp || cmake_object_order_depends_target_DnDTool3.0
   DEP_FILE = CMakeFiles\DnDTool3.0.dir\src\Simulator.cpp.obj.d
   FLAGS = -g
@@ -92,7 +99,7 @@ build CMakeFiles/DnDTool3.0.dir/src/Menus/StatsOverlayMenu.cpp.obj: CXX_COMPILER
 #############################################
 # Link the static library libDnDTool3.0.a
 
-build libDnDTool3.0.a: CXX_STATIC_LIBRARY_LINKER__DnDTool3.2e0_Debug CMakeFiles/DnDTool3.0.dir/src/Simulator.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Menus/HitpointManaModificationMenu.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Menus/MainSimMenu.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Menus/SettingsMenu.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Menus/StatsOverlayMenu.cpp.obj
+build libDnDTool3.0.a: CXX_STATIC_LIBRARY_LINKER__DnDTool3.2e0_Debug CMakeFiles/DnDTool3.0.dir/src/PlayerHandler.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Simulator.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Menus/HitpointManaModificationMenu.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Menus/MainSimMenu.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Menus/SettingsMenu.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Menus/StatsOverlayMenu.cpp.obj
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = CMakeFiles\DnDTool3.0.dir
   POST_BUILD = cd .

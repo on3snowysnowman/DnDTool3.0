@@ -75,7 +75,7 @@ void HitpointManaModificationMenu::start()
 
 void HitpointManaModificationMenu::update() 
 {
-    window->add_str("[ Main Menu / Modify Hitpoints ]\n\n");
+    window->add_str("[ Main Menu / Modify Hitpoints & Mana ]\n\n");
 
     window->add_str("Hitpoints: ", "DarkGray");
     menu_tools->render_multi_colored_meter(player->hitpoints, 0, 

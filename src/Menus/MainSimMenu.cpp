@@ -12,7 +12,8 @@
 // Constructors / Deconstructor
 
 MainSimMenu::MainSimMenu(uint16_t start_x, uint16_t start_y, uint16_t end_x, 
-    uint16_t end_y) : Menu(start_x, start_y, end_x, end_y, "MainSim") 
+    uint16_t end_y, Player* p) : Menu(start_x, start_y, end_x, end_y, 
+    "MainSim") 
 {
     CallbackManager::subscribe<MainSimMenu>
         ("reset cursor color", this, reset_cursor_color);
@@ -24,15 +25,7 @@ MainSimMenu::MainSimMenu(uint16_t start_x, uint16_t start_y, uint16_t end_x,
         ColorString("Settings", "Orange"), 
         ColorString("Quit", "Red")};
 
-    player = new Player();
-
-    player->hitpoints = 8;
-    player->max_hitpoints = 15;
-    player->defense = 14;
-    player->evasion = 9;
-    player->mana = 20;
-    player->max_mana = 100;
-    player->name = "Logoosal";
+    player = p;
 }
 
 

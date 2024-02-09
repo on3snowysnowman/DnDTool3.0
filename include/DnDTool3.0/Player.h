@@ -17,8 +17,6 @@ struct Player
     uint16_t mana {};
     uint16_t max_mana {};
 
-    uint16_t gold_coins;
-
     std::string name;
 
     std::vector<Item> items;

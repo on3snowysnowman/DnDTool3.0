@@ -15,7 +15,7 @@ class MainSimMenu : public Menu
 public:
 
     MainSimMenu(uint16_t start_x, uint16_t start_y, uint16_t end_x, 
-        uint16_t end_y);
+        uint16_t end_y, Player* p);
 
     void init_menu();
 

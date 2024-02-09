@@ -9,6 +9,7 @@
 #include "HitpointManaModificationMenu.h"
 #include "StatsOverlayMenu.h"
 #include "SettingsMenu.h"
+#include "PlayerHandler.h"
 
 
 class Simulator : public LSDLE
@@ -27,12 +28,18 @@ private:
 
     void process_keys();
 
+    void save_player();
+
     void stop_engine();
 
     std::unordered_map<char, std::string> key_to_callbacks
     {
         {SDLK_ESCAPE, "quit"}
     };
+
+    Player* player;
+
+    PlayerHandler* p_handler;
 
     MainSimMenu* main_sim_menu;
     HitpointManaModificationMenu* hit_mod_menu;

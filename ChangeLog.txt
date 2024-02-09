@@ -1,3 +1,9 @@
+# Version 0.2
+
+ CHANGES:
+
+ - Added a PlayerHandler for saving and loading players to disk
+
 # Version 0.1
 
  CHANGES:

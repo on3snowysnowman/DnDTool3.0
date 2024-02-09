@@ -9,13 +9,20 @@
 
 Simulator::Simulator() : LSDLE("C:/Users/on3sn/LSDLE") 
 {
+    CallbackManager::subscribe<Simulator>("quit", this, save_player);
     CallbackManager::subscribe<Simulator>("quit", this, stop_engine);
 
     int screen_width = get_screen_width();
     int screen_height = get_screen_height();
 
+    p_handler = new PlayerHandler(
+        "C:/Users/on3sn/Documents/DnDTool3.0/Player_Saves");
+
+    player = p_handler->load_player(
+        "C:/Users/on3sn/Documents/DnDTool3.0/Player_Saves/Logoosal.json");
+
     main_sim_menu = new MainSimMenu(0, 0, screen_width, 
-        screen_height);
+        screen_height, player);
 
     hit_mod_menu = new HitpointManaModificationMenu(0, 0, screen_width, 
         screen_height);
@@ -58,6 +65,11 @@ void Simulator::process_keys()
 
         CallbackManager::trigger_callback(key_to_callbacks[key]);
     }
+}
+
+void Simulator::save_player()
+{
+    p_handler->save_player(player);
 }
 
 void Simulator::stop_engine()

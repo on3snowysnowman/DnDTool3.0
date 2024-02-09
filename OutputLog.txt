@@ -1,1 +1,6 @@
 [LOG] Fullscreen : true
+[LOG] Searching for player saves...
+[LOG] 1 save(s) found.
+[LOG] Loading player: Logoosal
+[LOG] Saving player: Logoosal to directory : C:/Users/on3sn/Documents/DnDTool3.0
+      /Player_Saves/Logoosal.json

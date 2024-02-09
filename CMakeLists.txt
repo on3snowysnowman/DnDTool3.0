@@ -9,6 +9,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR})
 
 # Add library for DnDTool3.0
 add_library(DnDTool3.0
+    
+    src/PlayerHandler.cpp
     src/Simulator.cpp
 
     src/Menus/HitpointManaModificationMenu.cpp
