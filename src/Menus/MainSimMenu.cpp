@@ -1,18 +1,20 @@
-#include <ColorString.h>
-#include <EventSystem.h>
-#include <MenuHandler.h>
-#include <EventSystem.h>
 #include <iostream>
+
+#include "ColorString.h"
+#include "EventSystem.h"
+#include "MenuHandler.h"
+#include "EventSystem.h"
 
 #include "MainSimMenu.h"
 #include "SettingsMenu.h"
 #include "MenuHandler.h"
+#include "Simulator.h"
 
-
+ 
 // Constructors / Deconstructor
 
 MainSimMenu::MainSimMenu(uint16_t start_x, uint16_t start_y, uint16_t end_x, 
-    uint16_t end_y, Player* p) : Menu(start_x, start_y, end_x, end_y, 
+    uint16_t end_y) : Menu(start_x, start_y, end_x, end_y, 
     "MainSim") 
 {
     CallbackManager::subscribe<MainSimMenu>
@@ -20,12 +22,12 @@ MainSimMenu::MainSimMenu(uint16_t start_x, uint16_t start_y, uint16_t end_x,
 
     lsdc.content = std::vector<ColorString> {
         ColorString("Modify Hitpoints & Mana","White"),
-        ColorString("View Stats Overlay", "White"), 
-        ColorString("Inventory", "White"), 
-        ColorString("Settings", "Orange"), 
-        ColorString("Quit", "Red")};
+        ColorString("Modify Stats", "White"), 
+        ColorString("View Skills", "White"),
+        ColorString("Inventory", "White"),
+        ColorString("Save & Exit Simulation", "Red")};
 
-    player = p;
+    player = Simulator::get_player();
 }
 
 
@@ -48,7 +50,7 @@ void MainSimMenu::start() {}
 
 void MainSimMenu::update() 
 {
-    window->add_str("[ Main Menu ]\n\n");
+    window->add_str("[ Player Menu ]\n\n");
 
     render_quick_stats();
 
@@ -68,20 +70,22 @@ void MainSimMenu::update()
     if(selected_item == "Modify Hitpoints & Mana") 
         MenuHandler::activate_menu("HitpointManaModification");
 
-    else if(selected_item == "View Stats Overlay")
-        MenuHandler::activate_menu("StatsOverlay");
+    else if(selected_item == "Modify Stats")
+        MenuHandler::activate_menu("StatModification");
+
+    else if(selected_item == "View Skills")
+        MenuHandler::activate_menu("SkillsOverlay");
 
     else if(selected_item == "Inventory")
         MenuHandler::activate_menu("ViewInventory");
 
-    else if(selected_item == "Settings")
-        MenuHandler::activate_menu("Settings");
-
-    else if(selected_item == "Quit") CallbackManager::trigger_callback("quit");
+    else if(selected_item == "Save & Exit Simulation")
+    {
+        MenuHandler::deactivate_menu(this);
+        CallbackManager::trigger_callback("save player");
+    }
+        
 }
-
-Player* MainSimMenu::get_player() const { return player; }
-
 
 // Private
 

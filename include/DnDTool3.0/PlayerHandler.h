@@ -20,7 +20,7 @@ public:
 
     const std::vector<std::string>* get_player_saves();
 
-    Player* load_player(std::string player_name);
+    Player* load_player(std::string save_file_path);
 
 private:
 

@@ -14,8 +14,13 @@ add_library(DnDTool3.0
     src/Simulator.cpp
 
     src/Menus/HitpointManaModificationMenu.cpp
+    src/Menus/LoadPlayerMenu.cpp
     src/Menus/MainSimMenu.cpp
     src/Menus/SettingsMenu.cpp
+    src/Menus/SimulationInitMenu.cpp
+    src/Menus/SkillModificationMenu.cpp
+    src/Menus/SkillsOverlayMenu.cpp
+    src/Menus/StatModificationMenu.cpp
     src/Menus/StatsOverlayMenu.cpp
     src/Menus/ViewInventoryMenu.cpp
 )

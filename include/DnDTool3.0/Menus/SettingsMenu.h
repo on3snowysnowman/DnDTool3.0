@@ -5,10 +5,10 @@
 #include <unordered_map>
 #include <vector>
 
-#include <Menu.h>
-#include <SimulationDataContainers.h>
-#include <MenuToolChoice.h>
-#include <MenuToolButton.h>
+#include "Menu.h"
+#include "SimulationDataContainers.h"
+#include "MenuToolChoice.h"
+#include "MenuToolButton.h"
 
 
 class SettingsMenu : public Menu
@@ -28,13 +28,16 @@ public:
 
 private:
 
+    void update_cursor_color();
+    void exit_menu();
+
     uint8_t cursor_color_index {};
 
     std::string cursor_color = "Blue";
 
     MenuSimulationDataContainer msdc;
 
-    MenuToolButton* apply_button;
-    MenuToolButton* cancel_button;
+    MenuToolButton<SettingsMenu>* apply_button;
+    MenuToolButton<SettingsMenu>* cancel_button;
     MenuToolChoice* cursor_color_choice;
 };

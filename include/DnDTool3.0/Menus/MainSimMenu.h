@@ -3,8 +3,8 @@
 #include <cstdint>
 #include <string>
 
-#include <Menu.h>
-#include <SimulationDataContainers.h>
+#include "Menu.h"
+#include "SimulationDataContainers.h"
 
 #include "Player.h"
 
@@ -15,7 +15,7 @@ class MainSimMenu : public Menu
 public:
 
     MainSimMenu(uint16_t start_x, uint16_t start_y, uint16_t end_x, 
-        uint16_t end_y, Player* p);
+        uint16_t end_y);
 
     void init_menu();
 
@@ -23,8 +23,6 @@ public:
 
     void start() final;
     void update() final;
-
-    Player* get_player() const;
 
 private:
 
@@ -34,7 +32,7 @@ private:
 
     ListSelectionDataContainer lsdc;
 
-    Player* player;
+    Player* player {};
 
 };
 

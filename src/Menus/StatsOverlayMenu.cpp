@@ -1,11 +1,12 @@
-#include <ColorString.h>
-#include <MenuHandler.h>
-#include <EventSystem.h>
+#include "ColorString.h"
+#include "MenuHandler.h"
+#include "EventSystem.h"
 
 #include "StatsOverlayMenu.h"
 #include "MainSimMenu.h"
 #include "SettingsMenu.h"
 #include "MenuHandler.h"
+#include "Simulator.h"
 
 
 // Constructors / Deconstructor 
@@ -24,8 +25,7 @@ StatsOverlayMenu::StatsOverlayMenu(uint16_t start_x, uint16_t start_y,
         ColorString("Back", "Red")
     };
 
-    player = static_cast<MainSimMenu*>(
-        MenuHandler::get_menu("MainSim"))->get_player();
+    player = Simulator::get_player();
 }
 
 
@@ -51,7 +51,7 @@ void StatsOverlayMenu::start()
 
 void StatsOverlayMenu::update()
 {
-    window->add_str("[ Main Menu / Stats Overlay ]\n\n");
+    window->add_str("[ Player Menu / Stats Overlay ]\n\n");
 
     render_stats();
 
@@ -67,6 +67,7 @@ void StatsOverlayMenu::update()
 
     if(selected_item == "Modify Stats")
     {
+        MenuHandler::activate_menu("StatModification");
         return ;
     }
 

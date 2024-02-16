@@ -70,6 +70,13 @@ build CMakeFiles/DnDTool3.0.dir/src/Menus/HitpointManaModificationMenu.cpp.obj: 
   OBJECT_DIR = CMakeFiles\DnDTool3.0.dir
   OBJECT_FILE_DIR = CMakeFiles\DnDTool3.0.dir\src\Menus
 
+build CMakeFiles/DnDTool3.0.dir/src/Menus/LoadPlayerMenu.cpp.obj: CXX_COMPILER__DnDTool3.2e0_Debug C$:/Users/on3sn/Desktop/Programming/DnDTool3.0/src/Menus/LoadPlayerMenu.cpp || cmake_object_order_depends_target_DnDTool3.0
+  DEP_FILE = CMakeFiles\DnDTool3.0.dir\src\Menus\LoadPlayerMenu.cpp.obj.d
+  FLAGS = -g
+  INCLUDES = -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0 -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0/Menus -IC:/Users/on3sn/LSDLE/include/LSDLE -IC:/Users/on3sn/LSDLE/include/LSDLE/MenuTools -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/src -isystem C:/msys64/mingw64/include/SDL2
+  OBJECT_DIR = CMakeFiles\DnDTool3.0.dir
+  OBJECT_FILE_DIR = CMakeFiles\DnDTool3.0.dir\src\Menus
+
 build CMakeFiles/DnDTool3.0.dir/src/Menus/MainSimMenu.cpp.obj: CXX_COMPILER__DnDTool3.2e0_Debug C$:/Users/on3sn/Desktop/Programming/DnDTool3.0/src/Menus/MainSimMenu.cpp || cmake_object_order_depends_target_DnDTool3.0
   DEP_FILE = CMakeFiles\DnDTool3.0.dir\src\Menus\MainSimMenu.cpp.obj.d
   FLAGS = -g
@@ -79,6 +86,34 @@ build CMakeFiles/DnDTool3.0.dir/src/Menus/MainSimMenu.cpp.obj: CXX_COMPILER__DnD
 
 build CMakeFiles/DnDTool3.0.dir/src/Menus/SettingsMenu.cpp.obj: CXX_COMPILER__DnDTool3.2e0_Debug C$:/Users/on3sn/Desktop/Programming/DnDTool3.0/src/Menus/SettingsMenu.cpp || cmake_object_order_depends_target_DnDTool3.0
   DEP_FILE = CMakeFiles\DnDTool3.0.dir\src\Menus\SettingsMenu.cpp.obj.d
+  FLAGS = -g
+  INCLUDES = -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0 -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0/Menus -IC:/Users/on3sn/LSDLE/include/LSDLE -IC:/Users/on3sn/LSDLE/include/LSDLE/MenuTools -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/src -isystem C:/msys64/mingw64/include/SDL2
+  OBJECT_DIR = CMakeFiles\DnDTool3.0.dir
+  OBJECT_FILE_DIR = CMakeFiles\DnDTool3.0.dir\src\Menus
+
+build CMakeFiles/DnDTool3.0.dir/src/Menus/SimulationInitMenu.cpp.obj: CXX_COMPILER__DnDTool3.2e0_Debug C$:/Users/on3sn/Desktop/Programming/DnDTool3.0/src/Menus/SimulationInitMenu.cpp || cmake_object_order_depends_target_DnDTool3.0
+  DEP_FILE = CMakeFiles\DnDTool3.0.dir\src\Menus\SimulationInitMenu.cpp.obj.d
+  FLAGS = -g
+  INCLUDES = -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0 -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0/Menus -IC:/Users/on3sn/LSDLE/include/LSDLE -IC:/Users/on3sn/LSDLE/include/LSDLE/MenuTools -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/src -isystem C:/msys64/mingw64/include/SDL2
+  OBJECT_DIR = CMakeFiles\DnDTool3.0.dir
+  OBJECT_FILE_DIR = CMakeFiles\DnDTool3.0.dir\src\Menus
+
+build CMakeFiles/DnDTool3.0.dir/src/Menus/SkillModificationMenu.cpp.obj: CXX_COMPILER__DnDTool3.2e0_Debug C$:/Users/on3sn/Desktop/Programming/DnDTool3.0/src/Menus/SkillModificationMenu.cpp || cmake_object_order_depends_target_DnDTool3.0
+  DEP_FILE = CMakeFiles\DnDTool3.0.dir\src\Menus\SkillModificationMenu.cpp.obj.d
+  FLAGS = -g
+  INCLUDES = -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0 -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0/Menus -IC:/Users/on3sn/LSDLE/include/LSDLE -IC:/Users/on3sn/LSDLE/include/LSDLE/MenuTools -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/src -isystem C:/msys64/mingw64/include/SDL2
+  OBJECT_DIR = CMakeFiles\DnDTool3.0.dir
+  OBJECT_FILE_DIR = CMakeFiles\DnDTool3.0.dir\src\Menus
+
+build CMakeFiles/DnDTool3.0.dir/src/Menus/SkillsOverlayMenu.cpp.obj: CXX_COMPILER__DnDTool3.2e0_Debug C$:/Users/on3sn/Desktop/Programming/DnDTool3.0/src/Menus/SkillsOverlayMenu.cpp || cmake_object_order_depends_target_DnDTool3.0
+  DEP_FILE = CMakeFiles\DnDTool3.0.dir\src\Menus\SkillsOverlayMenu.cpp.obj.d
+  FLAGS = -g
+  INCLUDES = -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0 -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0/Menus -IC:/Users/on3sn/LSDLE/include/LSDLE -IC:/Users/on3sn/LSDLE/include/LSDLE/MenuTools -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/src -isystem C:/msys64/mingw64/include/SDL2
+  OBJECT_DIR = CMakeFiles\DnDTool3.0.dir
+  OBJECT_FILE_DIR = CMakeFiles\DnDTool3.0.dir\src\Menus
+
+build CMakeFiles/DnDTool3.0.dir/src/Menus/StatModificationMenu.cpp.obj: CXX_COMPILER__DnDTool3.2e0_Debug C$:/Users/on3sn/Desktop/Programming/DnDTool3.0/src/Menus/StatModificationMenu.cpp || cmake_object_order_depends_target_DnDTool3.0
+  DEP_FILE = CMakeFiles\DnDTool3.0.dir\src\Menus\StatModificationMenu.cpp.obj.d
   FLAGS = -g
   INCLUDES = -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0 -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/include/DnDTool3.0/Menus -IC:/Users/on3sn/LSDLE/include/LSDLE -IC:/Users/on3sn/LSDLE/include/LSDLE/MenuTools -IC:/Users/on3sn/Desktop/Programming/DnDTool3.0/src -isystem C:/msys64/mingw64/include/SDL2
   OBJECT_DIR = CMakeFiles\DnDTool3.0.dir
@@ -106,7 +141,7 @@ build CMakeFiles/DnDTool3.0.dir/src/Menus/ViewInventoryMenu.cpp.obj: CXX_COMPILE
 #############################################
 # Link the static library libDnDTool3.0.a
 
-build libDnDTool3.0.a: CXX_STATIC_LIBRARY_LINKER__DnDTool3.2e0_Debug CMakeFiles/DnDTool3.0.dir/src/PlayerHandler.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Simulator.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Menus/HitpointManaModificationMenu.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Menus/MainSimMenu.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Menus/SettingsMenu.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Menus/StatsOverlayMenu.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Menus/ViewInventoryMenu.cpp.obj
+build libDnDTool3.0.a: CXX_STATIC_LIBRARY_LINKER__DnDTool3.2e0_Debug CMakeFiles/DnDTool3.0.dir/src/PlayerHandler.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Simulator.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Menus/HitpointManaModificationMenu.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Menus/LoadPlayerMenu.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Menus/MainSimMenu.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Menus/SettingsMenu.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Menus/SimulationInitMenu.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Menus/SkillModificationMenu.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Menus/SkillsOverlayMenu.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Menus/StatModificationMenu.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Menus/StatsOverlayMenu.cpp.obj CMakeFiles/DnDTool3.0.dir/src/Menus/ViewInventoryMenu.cpp.obj
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = CMakeFiles\DnDTool3.0.dir
   POST_BUILD = cd .

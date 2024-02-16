@@ -1,10 +1,11 @@
-#include <ColorString.h>
+#include "ColorString.h"
 
 #include "ViewInventoryMenu.h"
 #include "MainSimMenu.h"
 #include "SettingsMenu.h"
 #include "MenuHandler.h"
 #include "Item.h"
+#include "Simulator.h"
 
 
 // Constructors / Deconstructors
@@ -15,6 +16,8 @@ ViewInventoryMenu::ViewInventoryMenu(uint16_t start_x, uint16_t start_y,
 {
     lsdc.content.push_back(ColorString("Modify Hovered Item", "White"));
     lsdc.content.push_back(ColorString("Back", "Red"));
+
+    player = Simulator::get_player();
 }
 
 
@@ -22,9 +25,6 @@ ViewInventoryMenu::ViewInventoryMenu(uint16_t start_x, uint16_t start_y,
 
 void ViewInventoryMenu::init_menu()
 {
-    player = static_cast<MainSimMenu*>(
-        MenuHandler::get_menu("MainSim"))->get_player();
-
     cursor_color = static_cast<SettingsMenu*>(
         MenuHandler::get_menu("Settings"))->get_cursor_color();
 
@@ -91,7 +91,7 @@ void ViewInventoryMenu::update()
     handle_keys();
     render_inventory();
 
-    window->add_str("[ Main Menu / Inventory ]\n\n");
+    window->add_str("[ Player Menu / Inventory ]\n\n");
 
     menu_tools->simulate_list_selection(lsdc);
 

@@ -1,10 +1,24 @@
+# Version .3
+ 
+ CHANGES:
+
+    
+
 # Version 0.2
 
  CHANGES:
 
+ - Configured a Main Menu system for changing settings, creating and loading
+   players and accessing the database. Only the loading player and settings 
+   menu are operational 
+
+ - Added multiple menus for modifying skills and stats.
+
  - Added a PlayerHandler for saving and loading players to disk
 
  - Added a ViewInventoryMenu
+
+ - Added a SimulationInitMenu
 
 # Version 0.1
 

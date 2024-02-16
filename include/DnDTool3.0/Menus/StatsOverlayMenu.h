@@ -3,8 +3,8 @@
 #include <cstdint>
 #include <string>
 
-#include <Menu.h>
-#include <SimulationDataContainers.h>
+#include "Menu.h"
+#include "SimulationDataContainers.h"
 
 #include "Player.h"
 

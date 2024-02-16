@@ -3,11 +3,12 @@
 #include <cstdint>
 #include <string>
 
-#include <Menu.h>
-#include <MenuToolButton.h>
-#include <MenuToolVariable.h>
-#include <SimulationDataContainers.h>
-#include <MenuToolChoice.h>
+#include "Menu.h"
+#include "MenuToolButton.h"
+#include "MenuToolVariable.h"
+#include "SimulationDataContainers.h"
+#include "MenuToolChoice.h"
+#include "MenuToolFunctionalButton.h"
 
 #include "Player.h"
 
@@ -30,18 +31,19 @@ private:
 
     void handle_increment();
     void handle_decrement();
+    void exit_menu();
 
     std::string* cursor_color;
 
     MenuSimulationDataContainer msdc;
 
-    MenuToolButton* increase_hitpoints_button;
-    MenuToolButton* decrease_hitpoints_button;
-    MenuToolButton* back_button;
+    MenuToolButton<HitpointManaModificationMenu>* increase_hitpoints_button;
+    MenuToolButton<HitpointManaModificationMenu>* decrease_hitpoints_button;
+    MenuToolButton<HitpointManaModificationMenu>* back_button;
     MenuToolVariable* delta_amount;
     MenuToolChoice* modification_choice;
 
-    Player* player;
+    Player* player {};
 
 };
 

@@ -1,4 +1,4 @@
-#include <EventSystem.h>
+#include "EventSystem.h"
 
 #include "SettingsMenu.h"
 #include "LSDLE.h"
@@ -14,9 +14,10 @@ SettingsMenu::SettingsMenu(uint16_t start_x, uint16_t start_y, uint16_t end_x,
     CallbackManager::subscribe<SettingsMenu>
         ("reset cursor color", this, reset_cursor_color);
 
-    cancel_button = new MenuToolButton(window, "Cancel", cursor_color, "Red");
-    apply_button = new MenuToolButton(window, "Apply Changes", cursor_color, 
-        "Green");
+    cancel_button = new MenuToolButton<SettingsMenu>(this, deactivate_menu,
+        window, "Cancel", cursor_color, "Red");
+    apply_button = new MenuToolButton<SettingsMenu>(this, update_cursor_color,
+        window, "Apply Changes", cursor_color, "Green");
     
     cursor_color_choice = new MenuToolChoice(window, cursor_color, "Cursor Color",
         0);
@@ -65,25 +66,6 @@ void SettingsMenu::update()
     window->add_str("-- Make a Selection --\n\n");
 
     menu_tools->simulate_menu(msdc);
-
-    if(msdc.selected_pos == -1) return;
-
-    switch(msdc.selected_pos)
-    {
-        // Apply Changes
-        case 1:
-
-            cursor_color = cursor_color_choice->get_choice();
-            cursor_color_index = cursor_color_choice->choice_index;
-            CallbackManager::trigger_callback("reset cursor color");
-            return;
-
-        // Back
-        case 2:
-
-            MenuHandler::deactivate_menu(this);
-            return;
-    }
 }
 
 std::string* SettingsMenu::get_cursor_color() { return &cursor_color; }
@@ -91,4 +73,9 @@ std::string* SettingsMenu::get_cursor_color() { return &cursor_color; }
 
 // Private
 
-
+void SettingsMenu::update_cursor_color()
+{
+    cursor_color = cursor_color_choice->get_choice();
+    cursor_color_index = cursor_color_choice->choice_index;
+    CallbackManager::trigger_callback("reset cursor color");
+}

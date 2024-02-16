@@ -1,4 +1,4 @@
-
+#include <iostream>
 
 #include "MenuHandler.h"
 #include "LMath.h"
@@ -9,6 +9,8 @@
 #include "MenuHandler.h"
 #include "MainSimMenu.h"
 #include "SettingsMenu.h"
+#include "Simulator.h"
+#include "MenuToolFunctionalButton.h"
 
 
 // Constructors / Deconstructor
@@ -20,13 +22,14 @@ HitpointManaModificationMenu::HitpointManaModificationMenu(uint16_t start_x,
     CallbackManager::subscribe<HitpointManaModificationMenu>
         ("reset cursor color", this, reset_cursor_color);
 
-    increase_hitpoints_button = new MenuToolButton(window, "Increment", "Blue", 
-        "Green");
+    increase_hitpoints_button = new MenuToolButton<HitpointManaModificationMenu>
+        (this, handle_increment, window, "Increment", "Blue", "Green");
 
-    decrease_hitpoints_button = new MenuToolButton(window, "Decrement", "Blue",
-        "Red");
+    decrease_hitpoints_button = new MenuToolButton<HitpointManaModificationMenu>
+        (this, handle_decrement, window, "Decrement", "Blue", "Red");
 
-    back_button = new MenuToolButton(window, "Back", "Blue", "Red");
+    back_button = new MenuToolButton<HitpointManaModificationMenu>
+        (this, exit_menu, window, "Back", "Blue", "Red");
 
     delta_amount = new MenuToolVariable(window, MenuToolItem::INT, 
         "Blue", "Amount to Change", "1");
@@ -43,8 +46,7 @@ HitpointManaModificationMenu::HitpointManaModificationMenu(uint16_t start_x,
 
     msdc.block_enter_key = false;
 
-    player = static_cast<MainSimMenu*>(
-        MenuHandler::get_menu("MainSim"))->get_player();
+    player = Simulator::get_player();
 }
 
 
@@ -75,7 +77,7 @@ void HitpointManaModificationMenu::start()
 
 void HitpointManaModificationMenu::update() 
 {
-    window->add_str("[ Main Menu / Modify Hitpoints & Mana ]\n\n");
+    window->add_str("[ Player Menu / Modify Hitpoints & Mana ]\n\n");
 
     window->add_str("Hitpoints: ", "LightGray");
     menu_tools->render_multi_colored_meter(player->hitpoints, 0, 
@@ -88,40 +90,39 @@ void HitpointManaModificationMenu::update()
 
     menu_tools->simulate_menu(msdc);
 
-    if(msdc.selected_pos == -1) return;
+    // if(msdc.selected_pos == -1) return;
 
-    switch(msdc.selected_pos)
-    {
-        // Increment
-        case 2:
+    // switch(msdc.selected_pos)
+    // {
+    //     // Increment
+    //     case 2:
             
-            handle_increment();
-            input_handler->set_delay(SDLK_RETURN, 8);
-            break;
+    //         handle_increment();
+    //         input_handler->set_delay(SDLK_RETURN, 8);
+    //         break;
 
-        // Decrement 
-        case 3:
+    //     // Decrement 
+    //     case 3:
 
-            handle_decrement();
-            input_handler->set_delay(SDLK_RETURN, 8);
-            break;
+    //         handle_decrement();
+    //         input_handler->set_delay(SDLK_RETURN, 8);
+    //         break;
 
-        // Back
-        case 4:
+    //     // Back
+    //     case 4:
 
-            input_handler->block_key_until_released(SDLK_RETURN);
-            MenuHandler::deactivate_menu(this);
-            return;
-    }
+    //         MenuHandler::deactivate_menu(this);
+    //         return;
+    // }
 }
 
 
 // Private
 
-#include <iostream>
-
 void HitpointManaModificationMenu::handle_increment()
 {
+    input_handler->set_delay(SDLK_RETURN, 8);
+
     uint16_t increment_amount = delta_amount->fetch_int();
 
     // Check if mana or hitpoints has been selected for modification
@@ -153,6 +154,8 @@ void HitpointManaModificationMenu::handle_increment()
 
 void HitpointManaModificationMenu::handle_decrement()
 {
+    input_handler->set_delay(SDLK_RETURN, 8);
+    
     uint16_t increment_amount = delta_amount->fetch_int();
 
     // Check if mana or hitpoints has been selected for modification
@@ -184,4 +187,10 @@ void HitpointManaModificationMenu::handle_decrement()
             player->mana -= increment_amount;
             return;
     }
+}
+
+void HitpointManaModificationMenu::exit_menu()
+{
+    deactivate_menu();
+    input_handler->block_key_until_released(SDLK_RETURN);
 }
