@@ -1,0 +1,9 @@
+
+
+OutputLog.txt
+path.txt
+
+*.exe
+
+/build
+/.vscode
